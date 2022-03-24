@@ -1,6 +1,6 @@
 const createUrl = (window.location.hostname.includes('localhost'))
 ? 'http://localhost:8080/api/usuarios/'
-: 'https://sia-interactive-video-test.herokuapp.com/';
+: 'https://sia-interactive-video-test.herokuapp.com/api/usuarios/';
 
 
 

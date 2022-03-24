@@ -1,6 +1,6 @@
 const url = (window.location.hostname.includes('localhost'))
 ? 'http://localhost:8080/api/auth/'
-: 'https://sia-interactive-video-test.herokuapp.com/';
+: 'https://sia-interactive-video-test.herokuapp.com/api/auth/';
 
 
 
