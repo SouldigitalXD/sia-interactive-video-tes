@@ -1,13 +1,13 @@
 const url = (window.location.hostname.includes('localhost'))
 ? 'http://localhost:8080/api/auth/'
-: 'https://restserver-curso-fher.herokuapp.com/api/auth/';
+: 'https://sia-interactive-video-test.herokuapp.com/';
 
 
 
 // Referencias HTML del Formulario Login
 const formularioLogin = document.querySelector('#Login');
 
-formularioLogin.addEventListener('submit', (e) => {
+formularioLogin.addEventListener('submit', async(e) => {
     e.preventDefault();
     const formData = {};
 
@@ -18,7 +18,7 @@ formularioLogin.addEventListener('submit', (e) => {
         }
     }
 
-    fetch(url + 'login', {
+    await fetch(url + 'login', {
         method: 'POST',
         body: JSON.stringify( formData ),
         headers: {'Content-Type': 'application/json'}

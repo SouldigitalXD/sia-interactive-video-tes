@@ -1,6 +1,7 @@
 const createUrl = (window.location.hostname.includes('localhost'))
 ? 'http://localhost:8080/api/usuarios/'
-: 'https://restserver-curso-fher.herokuapp.com/api/usuarios/';
+: 'https://sia-interactive-video-test.herokuapp.com/';
+
 
 
 
@@ -12,7 +13,7 @@ const password = document.querySelector('#password')
 const password2 = document.querySelector('#password2')
 
 
-formularioRegister.addEventListener('submit', (e) => {
+formularioRegister.addEventListener('submit', async(e) => {
     e.preventDefault();
 
     let data = {
@@ -22,7 +23,7 @@ formularioRegister.addEventListener('submit', (e) => {
         password2: password2.value,
     };
 
-    fetch(createUrl, {
+    await fetch(createUrl, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' }
