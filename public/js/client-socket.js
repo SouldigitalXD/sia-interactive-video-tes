@@ -10,6 +10,7 @@ let payload = {}
 
 // Referencias al HTML chat
 const video = document.querySelector('video');
+const btnSalir = document.querySelector('#btnSalir');
 
 
 // Validar el token del localStorage
@@ -84,6 +85,13 @@ const message = () => {
 
 video.addEventListener('click', message, false);
 
+
+
+btnSalir.addEventListener('click', ()=> {
+    localStorage.removeItem('token');
+    console.log('User signed out.');
+    window.location.href = '/index.html';
+});
 
 const main = async () => {
     await validarJWT();
