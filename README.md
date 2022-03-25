@@ -27,5 +27,11 @@ Para mas informacion no dudes en consultar el archivo package.json en donde esta
 
 BONUS:
 ```
-Adicionalmente se ha agregado un sistema de CRUD de usuarios y de auth usando JasonWebTokens para una mayor experiencia de uso de esta App.
+Adicionalmente se ha agregado un sistema de CRUD de usuarios y de auth usando JasonWebTokens para una mayor experiencia de uso de esta App,
+
+* Se pueden observar mensajes en la consola del navegador para verificar quien esta reproduciendo o pausando el video.
+* El boton controlador play del video esta nativo, solo se activara la conexion socket.io cuando se le de click a la pantalla del video (HTMLmediaVideo).
+* Perdonen el Spanglish
+
+Gracias por su colaboracion
 ```
