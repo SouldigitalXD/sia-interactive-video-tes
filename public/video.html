@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/SIA.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/video.css">
     <title>Video</title>
 </head>
+
 <body>
-    <h1>GOOD</h1>
+    <video controls loop muted="muted" class="video embed-responsive-item"
+        src="https://res.cloudinary.com/ddrpqxzi6/video/upload/v1647918094/qcwbb2rbevd9cvwf5u4v.mp4"
+        poster="https://res.cloudinary.com/ddrpqxzi6/image/upload/v1647917509/la0ratv4j5gfvgmo2ikm.jpg">
+    </video>
+
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./js/client-socket.js"></script>
 </body>
+
 </html>

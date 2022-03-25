@@ -3,7 +3,6 @@ const url = (window.location.hostname.includes('localhost'))
 : 'https://sia-interactive-video-test.herokuapp.com/api/auth/';
 
 
-
 // Referencias HTML del Formulario Login
 const formularioLogin = document.querySelector('#Login');
 

@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    background-color: #000000;
+    box-shadow: 2px 2px 1rem black;
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+}

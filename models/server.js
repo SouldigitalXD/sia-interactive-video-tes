@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const { dbConnection } = require('../database/config.db');
 const { socketController } = require('../socket/controller.socket');
-// const { videoController } = require('../socket/controller.socket.video');
+
 
 
 class Server {
@@ -60,13 +60,12 @@ class Server {
 
     socket() {
         this.io.on('connection', (socket) => socketController(socket, this.io) );
-        // this.io.on('connection', (socket) => videoController(socket, this.io) );
 
     }
 
     listen() {
         this.server.listen(this.port, () => {
-            console.log('Servidor corriendo en puerto', this.port);
+            console.log('Servidor corriendo en:', this.port );
         });
     }
 

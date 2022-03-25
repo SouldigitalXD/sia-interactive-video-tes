@@ -104,7 +104,7 @@ const googleSignin = async (req, res = response) => {
 
 }
 
-const renovarToken = async (req, res = response) => {
+const renovarToken = async(req, res = response) => {
 
     const { usuario } = req;
 
