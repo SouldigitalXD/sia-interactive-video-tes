@@ -8,7 +8,6 @@ let usuario = null;
 let socket = null;
 let payload = {}
 
-
 // Referencias al HTML chat
 const video = document.querySelector('video');
 
@@ -60,34 +59,27 @@ const conectarSocket = async () => {
 
 }
 async function videoPlayPause() {
-    if (video.paused) {
-        await video.play();
-    } else {
-        video.pause();
+    try {
+        (video.paused) ? await video.play() : video.pause();
+
+    } catch (error) {
+        console.log(error);
+        throw new Error('Error al reproducir el video');
     }
 }
 
 const message = () => {
 
     if (!video.paused) {
-
         mensaje = 'Esta pausando el video';
-        payload = {
-            usuario,
-            mensaje,
-        }
+        payload = { usuario, mensaje };
         socket.emit('enviar-mensaje', payload);
 
     } else {
-
         mensaje = 'Esta reproduciendo el video';
-        payload = {
-            usuario,
-            mensaje,
-        }
+        payload = { usuario, mensaje };
         socket.emit('enviar-mensaje', payload);
     }
-
 }
 
 video.addEventListener('click', message, false);

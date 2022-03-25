@@ -2,30 +2,24 @@ const { Socket } = require('socket.io');
 const { comprobarJWT } = require('../helpers');
 
 const socketController = async (socket = new Socket(), io) => {
-    
-    // io.set("transports", ["websocket"]);
 
     const usuario = await comprobarJWT(socket.handshake.headers['u-token']);
 
     if (!usuario) {
         return socket.disconnect();
     }
-    socket.on("connection", (socket) => {
-        io.emit("Cliente conectado", socket.id);
+
+    socket.on("connection", () => {
+        io.emit("Cliente conectado");
     });
 
-    socket.on('disconnect', () => {
-        console.log('Cliente desconectado');
-    });
+    // socket.on('disconnect', () => {
+    //     console.log('Cliente desconectado');
+    // });
 
     socket.on('enviar-mensaje', ( { usuario, mensaje } ) => {
         socket.broadcast.emit('mensaje-video', { de: usuario.nombre, mensaje: mensaje });
     });
-
-    // socket.on('play-pause', (payload) => {
-    //     io.emit('VideoPlay', payload);
-    // });
-
 
 }
 
