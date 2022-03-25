@@ -18,10 +18,14 @@ const socketController = async (socket = new Socket(), io) => {
         console.log('Cliente desconectado');
     });
 
-    socket.on('enviar-mensaje', ({ usuario, mensaje }) => {
-
-        socket.broadcast.emit('chat-sala', { de: usuario.nombre, text: mensaje });
+    socket.on('enviar-mensaje', ( { usuario, mensaje } ) => {
+        socket.broadcast.emit('mensaje-video', { de: usuario.nombre, mensaje: mensaje });
     });
+
+    // socket.on('play-pause', (payload) => {
+    //     io.emit('VideoPlay', payload);
+    // });
+
 
 }
 
